@@ -1,13 +1,13 @@
 <div class="portfolio-container">
   <header class="portfolio-header">
-    <h1>My Portfolio</h1>
-    <div class="header-actions">
-      <a routerLink="/trade" class="trade-btn">New Trade</a>
+    <h1>Home Page</h1>
+    <div class="header-actions" >
+      <a routerLink="/trade" class="trade-btn">New Entry</a>
       <button (click)="logout()" class="logout-btn">Logout</button>
     </div>
   </header>
 
-  <div class="portfolio-summary">
+  <!-- <div class="portfolio-summary">
     <div class="summary-card">
       <h3>Total Portfolio Value</h3>
       <p class="total-value">${{ getTotalPortfolioValue() | number:'1.2-2' }}</p>
@@ -16,14 +16,14 @@
       <h3>Total Holdings</h3>
       <p class="total-holdings">{{ holdings.length }}</p>
     </div>
-  </div>
+  </div> -->
 
   <div class="filter-section">
     <input
       type="text"
       [(ngModel)]="filterText"
       (input)="onFilterChange()"
-      placeholder="Filter by ticker or sector..."
+      placeholder="Search..."
       class="filter-input"
     />
   </div>

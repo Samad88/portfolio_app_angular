@@ -38,7 +38,8 @@ export class TradeComponent {
       timestamp: new Date()
     });
 
-    this.successMessage = `${this.tradeType.toUpperCase()} order for ${this.quantity} shares of ${this.ticker.toUpperCase()} submitted successfully!`;
+    this.successMessage = `Submitted succesfully!`;
+    // this.successMessage = `${this.tradeType.toUpperCase()} order for ${this.quantity} shares of ${this.ticker.toUpperCase()} submitted successfully!`;
 
     // Reset form after successful submission
     setTimeout(() => {

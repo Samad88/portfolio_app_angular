@@ -17,14 +17,14 @@ export interface Holding {
 })
 export class PortfolioComponent implements OnInit {
   holdings: Holding[] = [
-    { ticker: 'AAPL', quantity: 50, sector: 'Technology', performance: 12.5, currentPrice: 150.25, totalValue: 7512.50 },
-    { ticker: 'GOOGL', quantity: 25, sector: 'Technology', performance: 18.2, currentPrice: 2750.80, totalValue: 68770.00 },
-    { ticker: 'MSFT', quantity: 75, sector: 'Technology', performance: 22.1, currentPrice: 335.50, totalValue: 25162.50 },
-    { ticker: 'TSLA', quantity: 30, sector: 'Automotive', performance: -5.3, currentPrice: 185.60, totalValue: 5568.00 },
-    { ticker: 'JPM', quantity: 40, sector: 'Finance', performance: 8.7, currentPrice: 145.30, totalValue: 5812.00 },
-    { ticker: 'JNJ', quantity: 60, sector: 'Healthcare', performance: 6.2, currentPrice: 162.75, totalValue: 9765.00 },
-    { ticker: 'V', quantity: 35, sector: 'Finance', performance: 15.8, currentPrice: 235.90, totalValue: 8256.50 },
-    { ticker: 'WMT', quantity: 45, sector: 'Retail', performance: 4.1, currentPrice: 158.20, totalValue: 7119.00 }
+    { ticker: 'IN101', quantity: 50, sector: 'Technology', performance: 12.5, currentPrice: 150.25, totalValue: 7512.50 },
+    { ticker: 'IN102', quantity: 25, sector: 'Technology', performance: 18.2, currentPrice: 2750.80, totalValue: 68770.00 },
+    { ticker: 'IN103', quantity: 75, sector: 'Technology', performance: 22.1, currentPrice: 335.50, totalValue: 25162.50 },
+    { ticker: 'IN104', quantity: 30, sector: 'Automotive', performance: -5.3, currentPrice: 185.60, totalValue: 5568.00 },
+    { ticker: 'IN105', quantity: 40, sector: 'Finance', performance: 8.7, currentPrice: 145.30, totalValue: 5812.00 },
+    { ticker: 'IN106', quantity: 60, sector: 'Healthcare', performance: 6.2, currentPrice: 162.75, totalValue: 9765.00 },
+    { ticker: 'IN107', quantity: 35, sector: 'Finance', performance: 15.8, currentPrice: 235.90, totalValue: 8256.50 },
+    { ticker: 'IN108', quantity: 45, sector: 'Retail', performance: 4.1, currentPrice: 158.20, totalValue: 7119.00 }
   ];
 
   filteredHoldings: Holding[] = [];

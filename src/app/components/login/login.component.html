@@ -1,28 +1,28 @@
 <div class="login-container">
   <div class="login-form">
-    <h2>Login to Portfolio</h2>
+    <h2>Login</h2>
     <form (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="username">Username:</label>
+        <label for="username">Username</label>
         <input
           type="text"
           id="username"
           [(ngModel)]="username"
           name="username"
           required
-          placeholder="Enter username (admin)"
+          placeholder="Enter your username"
         />
       </div>
 
       <div class="form-group">
-        <label for="password">Password:</label>
+        <label for="password">Password</label>
         <input
           type="password"
           id="password"
           [(ngModel)]="password"
           name="password"
           required
-          placeholder="Enter password (admin)"
+          placeholder="Enter you password"
         />
       </div>
 
@@ -32,9 +32,9 @@
         {{ errorMessage }}
       </div>
 
-      <div class="hint">
-        <small>Hint: Use admin/admin</small>
-      </div>
+      <!-- <div class="hint">
+        <small>Hint: Use samad/admin</small>
+      </div> -->
     </form>
   </div>
 </div>

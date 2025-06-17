@@ -1,8 +1,8 @@
 <div class="trade-container">
   <header class="trade-header">
-    <h1>Place Trade Order</h1>
+    <h1>Add New Entry</h1>
     <div class="header-actions">
-      <a routerLink="/portfolio" class="portfolio-btn">Back to Portfolio</a>
+      <a routerLink="/portfolio" class="portfolio-btn">Back</a>
       <button (click)="logout()" class="logout-btn">Logout</button>
     </div>
   </header>
@@ -10,7 +10,7 @@
   <div class="trade-form-container">
     <form (ngSubmit)="onSubmit()" class="trade-form">
       <div class="form-group">
-        <label for="tradeType">Trade Type:</label>
+        <label for="tradeType">Entry Type:</label>
         <select id="tradeType" [(ngModel)]="tradeType" name="tradeType" required>
           <option value="buy">Buy</option>
           <option value="sell">Sell</option>
@@ -25,7 +25,7 @@
           [(ngModel)]="ticker"
           name="ticker"
           required
-          placeholder="e.g., AAPL, GOOGL, MSFT"
+          placeholder=""
           class="ticker-input"
           (input)="ticker = ticker.toUpperCase()"
         />
@@ -40,13 +40,13 @@
           name="quantity"
           required
           min="1"
-          placeholder="Number of shares"
+          placeholder=""
           class="quantity-input"
         />
       </div>
 
       <button type="submit" class="submit-btn" [class.buy]="tradeType === 'buy'" [class.sell]="tradeType === 'sell'">
-        Submit {{ tradeType.toUpperCase() }} Order
+        Submit 
       </button>
 
       <div class="success-message" *ngIf="successMessage">
@@ -58,7 +58,7 @@
       </div>
     </form>
 
-    <div class="trade-info">
+    <!-- <div class="trade-info">
       <h3>Trade Information</h3>
       <ul>
         <li>This is a demo trading interface</li>
@@ -66,6 +66,6 @@
         <li>All orders are logged to console</li>
         <li>Use common stock symbols like AAPL, GOOGL, MSFT</li>
       </ul>
-    </div>
+    </div> -->
   </div>
 </div>

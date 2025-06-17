@@ -13,7 +13,7 @@ export class AuthService {
 
   login(username: string, password: string): boolean {
     // Static credentials
-    if (username === 'admin' && password === 'admin') {
+    if (username === 'samad' && password === '123') {
       // Generate mock JWT token
       const mockToken = 'mock-jwt-token-' + Date.now();
       localStorage.setItem('portfolio-token', mockToken);
