@@ -32,7 +32,7 @@ describe('AuthService', () => {
   });
 
   it('should login with valid credentials and store token', () => {
-    const result = service.login('admin', 'admin');
+    const result = service.login('samad', '123');
 
     expect(result).toBe(true);
     expect(localStorage.getItem('portfolio-token')).toBeTruthy();
