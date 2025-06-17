@@ -26,10 +26,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('user-portfolio');
   });
 
-  it('should render title', () => {
+  it('should render router outlet', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('user-portfolio app is running!');
+    expect(compiled.querySelector('router-outlet')).toBeTruthy();
   });
 });

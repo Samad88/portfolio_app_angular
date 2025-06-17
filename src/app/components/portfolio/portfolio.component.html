@@ -1,0 +1,73 @@
+<div class="portfolio-container">
+  <header class="portfolio-header">
+    <h1>My Portfolio</h1>
+    <div class="header-actions">
+      <a routerLink="/trade" class="trade-btn">New Trade</a>
+      <button (click)="logout()" class="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <div class="portfolio-summary">
+    <div class="summary-card">
+      <h3>Total Portfolio Value</h3>
+      <p class="total-value">${{ getTotalPortfolioValue() | number:'1.2-2' }}</p>
+    </div>
+    <div class="summary-card">
+      <h3>Total Holdings</h3>
+      <p class="total-holdings">{{ holdings.length }}</p>
+    </div>
+  </div>
+
+  <div class="filter-section">
+    <input
+      type="text"
+      [(ngModel)]="filterText"
+      (input)="onFilterChange()"
+      placeholder="Filter by ticker or sector..."
+      class="filter-input"
+    />
+  </div>
+
+  <div class="table-container">
+    <table class="holdings-table">
+      <thead>
+        <tr>
+          <th (click)="sortBy('ticker')" class="sortable">
+            Ticker {{ getSortIcon('ticker') }}
+          </th>
+          <th (click)="sortBy('quantity')" class="sortable">
+            Quantity {{ getSortIcon('quantity') }}
+          </th>
+          <th (click)="sortBy('sector')" class="sortable">
+            Sector {{ getSortIcon('sector') }}
+          </th>
+          <th (click)="sortBy('currentPrice')" class="sortable">
+            Current Price {{ getSortIcon('currentPrice') }}
+          </th>
+          <th (click)="sortBy('totalValue')" class="sortable">
+            Total Value {{ getSortIcon('totalValue') }}
+          </th>
+          <th (click)="sortBy('performance')" class="sortable">
+            Performance % {{ getSortIcon('performance') }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let holding of filteredHoldings">
+          <td class="ticker">{{ holding.ticker }}</td>
+          <td>{{ holding.quantity }}</td>
+          <td>{{ holding.sector }}</td>
+          <td>${{ holding.currentPrice | number:'1.2-2' }}</td>
+          <td>${{ holding.totalValue | number:'1.2-2' }}</td>
+          <td [class]="holding.performance >= 0 ? 'positive' : 'negative'">
+            {{ holding.performance | number:'1.1-1' }}%
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="filteredHoldings.length === 0" class="no-results">
+      No holdings match your filter criteria.
+    </div>
+  </div>
+</div>

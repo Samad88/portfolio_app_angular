@@ -1,0 +1,71 @@
+<div class="trade-container">
+  <header class="trade-header">
+    <h1>Place Trade Order</h1>
+    <div class="header-actions">
+      <a routerLink="/portfolio" class="portfolio-btn">Back to Portfolio</a>
+      <button (click)="logout()" class="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <div class="trade-form-container">
+    <form (ngSubmit)="onSubmit()" class="trade-form">
+      <div class="form-group">
+        <label for="tradeType">Trade Type:</label>
+        <select id="tradeType" [(ngModel)]="tradeType" name="tradeType" required>
+          <option value="buy">Buy</option>
+          <option value="sell">Sell</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="ticker">Ticker Symbol:</label>
+        <input
+          type="text"
+          id="ticker"
+          [(ngModel)]="ticker"
+          name="ticker"
+          required
+          placeholder="e.g., AAPL, GOOGL, MSFT"
+          class="ticker-input"
+          (input)="ticker = ticker.toUpperCase()"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input
+          type="number"
+          id="quantity"
+          [(ngModel)]="quantity"
+          name="quantity"
+          required
+          min="1"
+          placeholder="Number of shares"
+          class="quantity-input"
+        />
+      </div>
+
+      <button type="submit" class="submit-btn" [class.buy]="tradeType === 'buy'" [class.sell]="tradeType === 'sell'">
+        Submit {{ tradeType.toUpperCase() }} Order
+      </button>
+
+      <div class="success-message" *ngIf="successMessage">
+        ✅ {{ successMessage }}
+      </div>
+
+      <div class="error-message" *ngIf="errorMessage">
+        ❌ {{ errorMessage }}
+      </div>
+    </form>
+
+    <div class="trade-info">
+      <h3>Trade Information</h3>
+      <ul>
+        <li>This is a demo trading interface</li>
+        <li>No real trades will be executed</li>
+        <li>All orders are logged to console</li>
+        <li>Use common stock symbols like AAPL, GOOGL, MSFT</li>
+      </ul>
+    </div>
+  </div>
+</div>
